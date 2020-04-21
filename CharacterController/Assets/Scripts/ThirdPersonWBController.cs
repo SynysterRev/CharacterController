@@ -89,7 +89,7 @@ public class ThirdPersonWBController : MonoBehaviour
     void RotatePlayer(Vector3 _forwardVector)
     {
         Quaternion rotation = Quaternion.LookRotation(_forwardVector);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
     }
 
 }

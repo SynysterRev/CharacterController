@@ -78,7 +78,7 @@ public class ThirdPersonCamera : MonoBehaviour
     void LookTarget()
     {
         Quaternion rotation = Quaternion.LookRotation(targetPos - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, damping * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, damping);
     }
 
     void CalculateNewPosition()
@@ -92,7 +92,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void FollowPlayer()
     {
-        transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime * speed);
+        transform.position = Vector3.Lerp(transform.position, destination, speed);
     }
 
     void RotateAroundPlayer()

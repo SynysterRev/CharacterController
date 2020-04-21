@@ -205,7 +205,7 @@ public class ThirdPersonController : MonoBehaviour
         //add camera's rotation to the next rotation
         angle.y += Camera.main.transform.eulerAngles.y;
         rotation = Quaternion.Euler(angle);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
         inputRotation = rotation;
         //calculate the new direction
         direction = inputRotation * Vector3.forward;
@@ -214,7 +214,7 @@ public class ThirdPersonController : MonoBehaviour
     void RotatePlayerWhenAuto()
     {
         Quaternion rotation = Quaternion.LookRotation(rb.velocity);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
     }
 
     //add force opposite to gravity to make player jump

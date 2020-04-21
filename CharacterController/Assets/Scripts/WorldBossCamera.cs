@@ -42,14 +42,14 @@ public class WorldBossCamera : MonoBehaviour
     
     private void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime * speed);
+        transform.position = Vector3.Lerp(transform.position, destination, speed);
         LookTarget();
     }
 
     void LookTarget()
     {
         Quaternion rotation = Quaternion.LookRotation(targetPos - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, damping * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, damping);
     }
 
     void RotateAroundBoss()
